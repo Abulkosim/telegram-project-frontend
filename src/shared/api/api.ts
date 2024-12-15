@@ -16,4 +16,11 @@ export const authApi = {
     api.post('/auth/register', { username, email, password }),
 };
 
+export const userApi = {
+  getProfile: (id: string) => api.get(`/user/profile/${id}`),
+  updateProfile: (id: string, userData: any) => api.put(`/user/profile/${id}`, userData),
+  deleteUser: (id: string) => api.delete(`/user/profile/${id}`),
+  getAllUsers: () => api.get('/user/all'),
+}
+
 export default api;
